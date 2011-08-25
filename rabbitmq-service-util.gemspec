@@ -18,13 +18,13 @@ common Ruby AMQP client libraries.
   s.email = %q{info@rabbitmq.com}
   s.extra_rdoc_files = [
     "LICENSE",
-    "README.rd"
+    "README.md"
   ]
   s.files = [
     "Gemfile",
     "Gemfile.lock",
     "LICENSE",
-    "README.rd",
+    "README.md",
     "Rakefile",
     "lib/rabbitmq_service_util.rb",
     "rabbitmq-service-util.gemspec"
