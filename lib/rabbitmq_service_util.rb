@@ -1,3 +1,5 @@
+require 'json'
+
 module RabbitMQ
   # Obtain the AMQP connection URL for the RabbitMQ service instance
   # for this app.  This URL can be passed directly to recent versions
@@ -8,16 +10,19 @@ module RabbitMQ
 
   # Obtain the AMQP connection URL on Cloud Foundry
   def self.cf_amqp_connection_url
-    services = JSON.parse(ENV['VCAP_SERVICES'], :symbolize_names => true)
-    url = services.values.map do |srvs|
-      srvs.map do |srv|
-        if srv[:label] =~ /^rabbitmq-/
-          srv[:credentials][:url]
-        else
-          []
+    services_env = ENV['VCAP_SERVICES']
+    if services_env
+      services = JSON.parse(services_env, :symbolize_names => true)
+      url = services.values.map do |srvs|
+        srvs.map do |srv|
+          if srv[:label] =~ /^rabbitmq-/
+            srv[:credentials][:url]
+          else
+            []
+          end
         end
-      end
-    end.flatten!.first
+      end.flatten!.first
+    end
   end
 
   # Obtain the AMQP connection URL on Heroku
