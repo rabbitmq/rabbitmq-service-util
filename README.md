@@ -13,14 +13,14 @@ Currently supports [Cloud Foundry](http://www.cloudfoundry.com) and
 
 Add the rubygem to your application's Gemfile:
 
-  gem 'rabbitmq-service-util'
+    gem 'rabbitmq-service-util'
 
 ## Usage
 
-  require 'rabbitmq-service-util'
+    require 'rabbitmq-service-util'
 
-  # If using the amqp gem
-  connection = AMQP.connect(RabbitMQ::amqp_connection_url)
+    # If using the amqp gem
+    connection = AMQP.connect(RabbitMQ::amqp_connection_url)
 
-  # If using the bunny gem
-  connection = Bunny.new(RabbitMQ::amqp_connection_url)
+    # If using the bunny gem
+    connection = Bunny.new(RabbitMQ::amqp_connection_url)
