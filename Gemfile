@@ -1,6 +1,6 @@
 source "http://rubygems.org"
 
-require 'json'
+gem 'json'
 
 # Everything needed to run rake, tests, etc.
 group :development do
