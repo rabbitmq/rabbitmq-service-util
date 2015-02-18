@@ -1,3 +1,6 @@
+**Repository [moved to GitHub](https://github.com/rabbitmq/rabbitmq-service-util)**.
+This is a stale read-only repository.
+
 # rabbitmq-service-util
 
 Utility code to obtain the RabbitMQ service connection information on
